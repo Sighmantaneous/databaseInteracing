@@ -12,11 +12,12 @@ public class QueryExample {
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-
+            System.out.println("ID\t"+"Name\t"+"Price");
             while ( rs.next() ) {
                 int productId = rs.getInt("id");
                 String nameProduct = rs.getString("name");
                 String priced = rs.getString("price");
+
                 System.out.println(productId+"\t"+nameProduct +"\t" +priced);
             }
 
